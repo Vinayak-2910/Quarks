@@ -93,7 +93,20 @@ export function createManifestoScene({
       scrub: 1,
       onEnter: () => setHudLabel(MANIFESTO.hudLabel),
       onEnterBack: () => setHudLabel(MANIFESTO.hudLabel),
-      onRefresh: (self) => reportSceneRange("manifesto", self),
+      onRefresh: (self) => {
+        reportSceneRange("manifesto", self);
+        // On (re)load / resize, if the manifesto isn't the section in view,
+        // make sure its grid + triad background isn't left switched on behind
+        // later sections. Deferred a frame so it runs after refresh's onUpdate.
+        if (!self.isActive) {
+          requestAnimationFrame(() => {
+            if (self.isActive) return;
+            const e = getEngine();
+            e?.setActive("gridWorld", false);
+            e?.setActive("triad", false);
+          });
+        }
+      },
       onUpdate: (self) => {
         const p = self.progress;
         tl.progress(p);

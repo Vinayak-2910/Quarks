@@ -18,7 +18,8 @@ export default function Cursor() {
   const triadRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isTouchDevice() || prefersReducedMotion()) return;
+    if (isTouchDevice() || prefersReducedMotion() || window.innerWidth < 1024)
+      return;
     const dot = dotRef.current;
     const ring = ringRef.current;
     const label = labelRef.current;
@@ -64,10 +65,11 @@ export default function Cursor() {
               : v === "media"
                 ? 0
                 : 32;
+      const hiddenV = v === "hidden";
       gsap.to(ringEl, {
-        width: size,
-        height: size,
-        opacity: v === "media" || v === "text" ? 0 : 1,
+        width: hiddenV ? 0 : size,
+        height: hiddenV ? 0 : size,
+        opacity: v === "media" || v === "text" || hiddenV ? 0 : 1,
         duration: 0.35,
         ease: "expo.out",
       });
@@ -80,6 +82,7 @@ export default function Cursor() {
       gsap.to(dot, {
         scaleX: v === "text" ? 0.3 : 1,
         scaleY: v === "text" ? 3.2 : 1,
+        opacity: hiddenV ? 0 : 1,
         duration: 0.25,
         ease: "expo.out",
       });
@@ -170,7 +173,7 @@ export default function Cursor() {
     <div aria-hidden="true" className="contents">
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-cherenkov-500"
+        className="pointer-events-none fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-cherenkov-500 opacity-0 lg:opacity-100"
         style={{
           zIndex: "var(--z-cursor)",
           boxShadow: "0 0 12px 2px rgba(56,219,255,0.75)",
@@ -178,7 +181,7 @@ export default function Cursor() {
       />
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border"
+        className="pointer-events-none fixed left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border opacity-0 lg:opacity-100"
         style={{
           zIndex: "var(--z-cursor)",
           borderColor: "rgba(242,245,250,0.35)",
@@ -186,7 +189,7 @@ export default function Cursor() {
       />
       <div
         ref={triadRef}
-        className="pointer-events-none fixed left-0 top-0 opacity-0"
+        className="pointer-events-none fixed left-0 top-0 lg:block hidden"
         style={{
           zIndex: "var(--z-cursor)",
           marginLeft: "-2px",

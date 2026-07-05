@@ -33,6 +33,7 @@ export const PIN = {
   collisionEach: { desktop: 2000, tablet: 2000, mobile: 1500 },
   scale: { desktop: 2000, tablet: 2000, mobile: 1500 },
   contact: { desktop: 2000, tablet: 2000, mobile: 1500 },
+  about: { desktop: 2800, tablet: 2400, mobile: 2000 },
 } as const;
 
 export const CURSOR = {

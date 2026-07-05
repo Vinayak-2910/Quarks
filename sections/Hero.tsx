@@ -4,7 +4,7 @@
 import { useRef } from "react";
 import { useSceneTrigger } from "@/hooks/useSceneTrigger";
 import { createHeroScene, type HeroRefs } from "@/animations/scenes/hero";
-import { HERO, SITE } from "@/constants/content";
+import { HERO } from "@/constants/content";
 import { MEDIA } from "@/constants/tokens";
 
 export default function Hero() {
@@ -75,7 +75,7 @@ export default function Hero() {
             textShadow: "0 0 40px rgba(4,4,10,0.6)",
           }}
         >
-          From invisible to inevitable
+          From Invisible to Inevitable
           <span className="text-cherenkov-500">.</span>
         </h1>
         {/* <p ref={subline} className="type-mono mt-6 text-dust">

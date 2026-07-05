@@ -6,7 +6,7 @@ import { createContactScene, type ContactRefs } from "@/animations/scenes/contac
 import { attachMagnetic } from "@/animations/interactions/magnetic";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { getLenis } from "@/components/providers/SmoothScrollProvider";
-import { CONTACT, SITE } from "@/constants/content";
+import { CONTACT, SITE, ABOUT } from "@/constants/content";
 
 export default function Contact() {
   const section = useRef<HTMLElement>(null);
@@ -65,6 +65,25 @@ export default function Contact() {
             </p>
           ))}
         </div>
+
+        {/* About Us — centered on mobile/tablet, bottom-right on desktop; jumps to the About section */}
+        {/* <div className="absolute bottom-28 left-0 right-0 z-10 flex justify-center px-6 md:bottom-12 md:left-auto md:right-12 md:justify-end md:px-0">
+          <button
+            type="button"
+            data-cursor="link"
+            aria-label="Go to About Us"
+            onClick={() => getLenis()?.scrollTo("#about", { duration: 2 })}
+            className="group relative flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-7 py-3.5 backdrop-blur-md transition-colors hover:border-cherenkov-500/40"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-cherenkov-500 shadow-[0_0_12px_2px_rgba(56,219,255,0.7)]" />
+            <span className="type-mono text-starlight group-hover:text-whitehot">
+              {ABOUT.triggerLabel}
+            </span>
+            <span className="type-mono text-cherenkov-700 transition-transform group-hover:translate-x-1">
+              →
+            </span>
+          </button>
+        </div> */}
 
         <div
           ref={footer}

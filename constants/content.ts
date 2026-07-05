@@ -19,11 +19,7 @@ export const HERO = {
 
 export const MANIFESTO = {
   hudLabel: "S2 · THE DIMENSION",
-  lines: [
-    "Everything that matters",
-    "is made of things",
-    "you can't see.",
-  ],
+  lines: ["Everything that matters", "is made of things", "you can't see."],
   particles: "ATTENTION · INSIGHT · IDEAS — THE PARTICLES OF CULTURE.",
 } as const;
 
@@ -43,7 +39,7 @@ export const FORCES: readonly ForceDef[] = [
     index: "FORCE 01 / 04",
     name: "EXPERIENCE",
     service: "Design & Development",
-    line: "We dont create websites, we create digital experiences like no other.",
+    line: "We don't create websites, we create unique digital experiences.",
     tags: ["Design Language", "3D", "Interactive"],
     symbol: "experience",
   },
@@ -115,7 +111,7 @@ export const COLLISIONS: readonly CollisionDef[] = [
     metrics: [
       { value: 1, suffix: "M", label: "Installs / 90 days" },
       { value: 4.8, suffix: "★", label: "Store rating" },
-      { value: 9, prefix: "+", suffix: "pt", label: "Brand recall" },
+      { value: 70, prefix: "", suffix: "%", label: "Faster" },
     ],
   },
   {
@@ -166,6 +162,63 @@ export const CONTACT = {
   socials: ["Instagram", "LinkedIn", "X"],
   backToTop: "SCROLL UP",
   legal: "© 2026 QUARKS. All matter reserved.",
+} as const;
+
+export interface FounderDef {
+  /** stable id, also used for React keys */
+  id: string;
+  /** display name (revealed word by word) */
+  name: string;
+  /** position / title line */
+  role: string;
+  /** extra detail lines shown under the role (each revealed word by word) */
+  details: string[];
+  /** full landscape photo in /public/founders — face toward the left */
+  photoFull: string;
+  /** optional mono index label; auto-filled from position if omitted */
+  index?: string;
+}
+
+/**
+ * ABOUT — the founders. To add a founder later: drop a background-removed head
+ * cutout into /public/founders/NAME.png and append one entry below.
+ */
+export const FOUNDERS: readonly FounderDef[] = [
+  {
+    id: "saksham",
+    name: "SAKSHAM",
+    role: "CO-FOUNDER · CREATIVE & BUILD",
+    details: [
+      "Design, development & 3D experiences",
+      "Turns scattered ideas into inevitable brands",
+      "Obsessed with the physics of attention",
+    ],
+    photoFull: "/founders/saksham.jpg",
+  },
+  // ── PLACEHOLDER founder so the carousel is visible with one real profile.
+  // Replace with your real co-founder (drop a photo in /public/founders and
+  // point photoFull at it), or delete this entry entirely.
+  {
+    id: "founder-2",
+    name: "YOUR CO-FOUNDER",
+    role: "CO-FOUNDER · STRATEGY & GROWTH",
+    details: [
+      "Replace this placeholder with the real profile",
+      "Add a landscape photo to /public/founders",
+      "The carousel scales to any number of founders",
+    ],
+    photoFull: "/founders/saksham.jpg",
+  },
+] as const;
+
+export const ABOUT = {
+  hudLabel: "S8 · THE OBSERVERS",
+  eyebrow: "ABOUT US",
+  introTitle: "We compile scattered skills into a single force.",
+  introBody:
+    "Quarks is a small, obsessive team of specialists — strategists, designers, engineers and storytellers. We organise and compile very different skills into one coherent force, so ideas that start invisible end up inevitable. Different particles, one field.",
+  triggerLabel: "ABOUT US",
+  closeLabel: "CLOSE",
 } as const;
 
 export const NAV = {

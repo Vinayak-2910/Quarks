@@ -4,6 +4,7 @@ import Forces from "@/sections/Forces";
 import Collisions from "@/sections/Collisions";
 import Scale from "@/sections/Scale";
 import Proof from "@/sections/Proof";
+import About from "@/sections/About";
 import Contact from "@/sections/Contact";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Collisions />
       <Scale />
       <Proof />
+      <About />
       <Contact />
     </main>
   );

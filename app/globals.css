@@ -118,3 +118,20 @@ body[data-custom-cursor="true"] * {
     scroll-behavior: auto;
   }
 }
+
+/* ── About: bluish particle dot-film over founder photos ─────────────── */
+.dot-film {
+  background-image: radial-gradient(var(--color-cherenkov-300) 0.7px, transparent 1.3px);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  mix-blend-mode: screen;
+  opacity: 0.42;
+  pointer-events: none;
+}
+.dot-film-fine {
+  background-image: radial-gradient(rgba(56, 219, 255, 0.55) 0.5px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  pointer-events: none;
+}
