@@ -6,7 +6,7 @@ import { createContactScene, type ContactRefs } from "@/animations/scenes/contac
 import { attachMagnetic } from "@/animations/interactions/magnetic";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { getLenis } from "@/components/providers/SmoothScrollProvider";
-import { CONTACT, SITE, ABOUT } from "@/constants/content";
+import { CONTACT, SITE } from "@/constants/content";
 
 export default function Contact() {
   const section = useRef<HTMLElement>(null);
