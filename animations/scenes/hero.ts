@@ -26,10 +26,11 @@ export interface HeroRefs {
 
 export function createHeroScene({ refs, tier, reduced }: SceneBuildArgs<HeroRefs>): () => void {
   const { section, video, videoWrap, headline, subline, hint } = refs;
-  if (!section || !video || !headline || !subline || !hint || !videoWrap) return () => {};
+  // subline is optional — the element may be commented out in the DOM shell.
+  if (!section || !video || !headline || !hint || !videoWrap) return () => {};
 
   if (reduced) {
-    gsap.set([headline, subline], { opacity: 1 });
+    gsap.set(subline ? [headline, subline] : headline, { opacity: 1 });
     gsap.set(hint, { opacity: 0 });
     return () => {};
   }
@@ -66,7 +67,7 @@ export function createHeroScene({ refs, tier, reduced }: SceneBuildArgs<HeroRefs
     rotationX: (i: number) => vectors[i].rx,
     opacity: 0,
   });
-  gsap.set(subline, { clipPath: "inset(0 100% 0 0)" });
+  if (subline) gsap.set(subline, { clipPath: "inset(0 100% 0 0)" });
 
   const [tIn0, tIn1] = HERO_KEYS.taglineIn;
   const [tHold0, tHold1] = HERO_KEYS.actOne;
@@ -89,7 +90,6 @@ export function createHeroScene({ refs, tier, reduced }: SceneBuildArgs<HeroRefs
     },
     tIn0,
   )
-    .to(subline, { clipPath: "inset(0 0% 0 0)", duration: 0.04, ease: "power2.out" }, tIn1 - 0.02)
     .to(headline, { y: "-6vh", z: 120, duration: tHold1 - tHold0 }, tHold0)
     .to(
       chars,
@@ -105,7 +105,6 @@ export function createHeroScene({ refs, tier, reduced }: SceneBuildArgs<HeroRefs
       },
       tOut0,
     )
-    .to(subline, { opacity: 0, duration: 0.05 }, tOut0)
     .to(hint, { opacity: 0, duration: 0.06 }, 0.12)
     .to(videoWrap, { opacity: 0, duration: 1 - tHand0, ease: "power1.inOut" }, tHand0);
 
