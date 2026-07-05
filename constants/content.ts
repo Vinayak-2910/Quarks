@@ -6,13 +6,13 @@ export const SITE = {
   subline: "A DIGITAL MARKETING AGENCY",
   description:
     "Quarks is a digital marketing agency that engineers attention at the fundamental level. One continuous journey from a single particle to an infinite digital universe.",
-  emailNew: "hello@quarks.agency",
-  emailElse: "hi@quarks.agency",
+  emailNew: "quarksdigitalmarketing@gmail.com",
+  emailElse: "quarks.questions@gmail.com",
   coordinates: "51.5074° N · 0.1278° W",
 } as const;
 
 export const HERO = {
-  scrollHint: "SCROLL TO CREATE",
+  scrollHint: "SCROLL TO EXPLORE",
   hudBoot: "INITIALIZING",
   hudLabel: "S1 · THE VOID",
 } as const;
@@ -34,45 +34,45 @@ export interface ForceDef {
   service: string;
   line: string;
   tags: [string, string, string];
-  symbol: "strong" | "electromagnetic" | "weak" | "gravity";
+  symbol: "experience" | "seo" | "performance" | "presence";
 }
 
 export const FORCES: readonly ForceDef[] = [
   {
-    id: "strong",
+    id: "experience",
     index: "FORCE 01 / 04",
-    name: "STRONG",
-    service: "Brand & Identity",
-    line: "The force that holds everything together.",
-    tags: ["Identity systems", "Positioning", "Design language"],
-    symbol: "strong",
+    name: "EXPERIENCE",
+    service: "Design & Development",
+    line: "We dont create websites, we create digital experiences like no other.",
+    tags: ["Design Language", "3D", "Interactive"],
+    symbol: "experience",
   },
   {
-    id: "electromagnetic",
+    id: "seo",
     index: "FORCE 02 / 04",
-    name: "ELECTROMAGNETIC",
-    service: "Performance & Paid",
+    name: "SEO",
+    service: "Reach & Growth",
     line: "Attraction, engineered.",
-    tags: ["Paid social", "Search", "CRO"],
-    symbol: "electromagnetic",
+    tags: ["Search", "Real-time", "CRO"],
+    symbol: "seo",
   },
   {
-    id: "weak",
+    id: "performance",
     index: "FORCE 03 / 04",
-    name: "WEAK",
+    name: "PERFORMANCE",
     service: "Strategy & Transformation",
     line: "The force that changes one thing into another.",
     tags: ["Brand strategy", "Rebrands", "Go-to-market"],
-    symbol: "weak",
+    symbol: "performance",
   },
   {
-    id: "gravity",
+    id: "presence",
     index: "FORCE 04 / 04",
-    name: "GRAVITY",
+    name: "PRESENCE",
     service: "Content & Social",
-    line: "Build enough mass and audiences orbit you.",
+    line: "Amass attention, build communities, and grow your audience.",
     tags: ["Content engines", "Social", "Community"],
-    symbol: "gravity",
+    symbol: "presence",
   },
 ] as const;
 
@@ -81,6 +81,7 @@ export const FORCES_HUD = "S3 · THE FORCES";
 export interface CollisionDef {
   id: string;
   index: string;
+  product: string;
   client: string;
   sector: string;
   year: string;
@@ -92,6 +93,7 @@ export const COLLISIONS: readonly CollisionDef[] = [
   {
     id: "helios",
     index: "COLLISION 001",
+    product: "HELIOS",
     client: "HELIOS",
     sector: "Consumer EV",
     year: "2025",
@@ -103,12 +105,13 @@ export const COLLISIONS: readonly CollisionDef[] = [
     ],
   },
   {
-    id: "mira",
+    id: "kute",
     index: "COLLISION 002",
-    client: "MIRA",
-    sector: "Fintech",
+    product: "KUTE",
+    client: "FlaminCo",
+    sector: "Dating",
     year: "2025",
-    image: "/media/cases/mira.png",
+    image: "/media/cases/kute.png",
     metrics: [
       { value: 1, suffix: "M", label: "Installs / 90 days" },
       { value: 4.8, suffix: "★", label: "Store rating" },
@@ -118,6 +121,7 @@ export const COLLISIONS: readonly CollisionDef[] = [
   {
     id: "atlas",
     index: "COLLISION 003",
+    product: "ATLAS",
     client: "ATLAS",
     sector: "Streetwear",
     year: "2026",
@@ -133,10 +137,10 @@ export const COLLISIONS: readonly CollisionDef[] = [
 export const COLLISIONS_HUD = "S4 · COLLISIONS";
 
 export const SCALE_STEPS = [
-  { index: "01", name: "OBSERVE", line: "Research & insight - we find the particle." },
-  { index: "02", name: "BIND", line: "Strategy - force strong enough to hold an idea together." },
+  { index: "01", name: "OBSERVE", line: "Research & insight - Market analysis." },
+  { index: "02", name: "BIND", line: "Strategy - that holds ideas together." },
   { index: "03", name: "COLLIDE", line: "Creative - where new ideas are made." },
-  { index: "04", name: "ACCELERATE", line: "Launch & media - mass approaching light speed." },
+  { index: "04", name: "ACCELERATE", line: "Launch & media - exposure beyond measure." },
   { index: "05", name: "ORBIT", line: "Optimize & retain - audiences that never leave." },
 ] as const;
 
@@ -145,8 +149,8 @@ export const SCALE_HUD = "S5 · THE SCALE";
 export const PROOF = {
   hudLabel: "S6 · PROOF",
   stats: [
-    { value: 140, suffix: "+", label: "BRANDS GIVEN MASS" },
-    { value: 12, suffix: "", label: "INDUSTRY AWARDS" },
+    { value: 10, suffix: "+", label: "PRODUCTS" },
+    { value: 10000, suffix: "+", label: "LIVES IMPACTED" },
     { value: 9, suffix: "", label: "COUNTRIES" },
   ],
 } as const;

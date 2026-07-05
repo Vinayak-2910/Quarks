@@ -63,7 +63,7 @@ export function createCollisionsScene({
     }
 
     const K = COLLISION_KEYS;
-    gsap.set(media, { clipPath: "circle(0% at 50% 50%)" });
+    gsap.set(media, { x: "-100%", opacity: 0 });    
     gsap.set([beamL, beamR], { opacity: 0 });
     gsap.set(flash, { opacity: 0 });
     gsap.set(meta, { clipPath: "inset(0 100% 0 0)" });
@@ -102,16 +102,16 @@ export function createCollisionsScene({
         },
         K.impact[0],
       )
-      .to(media, { clipPath: "circle(75% at 50% 50%)", duration: K.burst[1] - K.burst[0], ease: "power2.out" }, K.burst[0])
+      .to(media, { x: "0%", opacity: 1, duration: (K.burst[1] - K.burst[0]) * 0.3, ease: "power3.out" }, K.burst[0] - 0.06)
       .to(titleSpans, { yPercent: 0, duration: 0.1, ease: "power3.out", stagger: 0.025 }, K.burst[0] + 0.02)
       .to(meta, { clipPath: "inset(0 0% 0 0)", duration: 0.08, ease: "power2.out" }, K.burst[0] + 0.05)
-      .fromTo(media, { scale: 1.12 }, { scale: 1.0, duration: K.hold[1] - K.burst[0], ease: "power1.out" }, K.burst[0])
+      .to(media, { y: "-2vh", duration: K.hold[1] - K.hold[0] }, K.hold[0])
       .to(media, { y: "-2vh", duration: K.hold[1] - K.hold[0] }, K.hold[0])
       .to(
-        media,
-        { clipPath: "circle(0% at 62% 50%)", scale: 0.86, duration: K.exit[1] - K.exit[0], ease: "power2.in" },
-        K.exit[0],
-      )
+          media,
+          { x: "100%", opacity: 0, duration: K.exit[1] - K.exit[0], ease: "power2.in" },
+          K.exit[0],
+        )
       .to([title, meta, metrics], { opacity: 0, y: -30, duration: K.exit[1] - K.exit[0], ease: "power2.in" }, K.exit[0]);
 
     const st = register(

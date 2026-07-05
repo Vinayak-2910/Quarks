@@ -65,7 +65,7 @@ export default function RootLayout({
           <ScaleReadout />
           <ProgressFilament />
           <Cursor />
-          <Grain />
+          {/* <Grain /> */}
           <Preloader />
         </SmoothScrollProvider>
       </body>

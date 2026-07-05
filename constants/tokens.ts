@@ -37,7 +37,7 @@ export const MEDIA = {
   obsidian: "/media/obsidian.png",
   cases: {
     helios: "/media/cases/helios.png",
-    mira: "/media/cases/mira.png",
+    kute: "/media/cases/kute.png",
     atlas: "/media/cases/atlas.png",
   },
 } as const;

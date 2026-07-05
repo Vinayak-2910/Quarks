@@ -15,17 +15,26 @@ export default function Hero() {
   const subline = useRef<HTMLParagraphElement>(null);
   const hint = useRef<HTMLDivElement>(null);
 
-  useSceneTrigger<HeroRefs>(
-    (args) => createHeroScene(args),
-    {
-      get section() { return section.current; },
-      get videoWrap() { return videoWrap.current; },
-      get video() { return video.current; },
-      get headline() { return headline.current; },
-      get subline() { return subline.current; },
-      get hint() { return hint.current; },
+  useSceneTrigger<HeroRefs>((args) => createHeroScene(args), {
+    get section() {
+      return section.current;
     },
-  );
+    get videoWrap() {
+      return videoWrap.current;
+    },
+    get video() {
+      return video.current;
+    },
+    get headline() {
+      return headline.current;
+    },
+    get subline() {
+      return subline.current;
+    },
+    get hint() {
+      return hint.current;
+    },
+  });
 
   return (
     <section
@@ -61,7 +70,10 @@ export default function Hero() {
         <h1
           ref={headline}
           className="type-display text-starlight"
-          style={{ fontSize: "clamp(2.6rem, 8.5vw, 8.5rem)", textShadow: "0 0 40px rgba(4,4,10,0.6)" }}
+          style={{
+            fontSize: "clamp(2.3rem, 7.8vw, 7.5rem)",
+            textShadow: "0 0 40px rgba(4,4,10,0.6)",
+          }}
         >
           From invisible to inevitable
           <span className="text-cherenkov-500">.</span>

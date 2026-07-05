@@ -35,21 +35,48 @@ function useBlockBind(): { bind: BlockBind; refs: CollisionBlockRefs } {
   return {
     bind: { block, beamL, beamR, flash, media, mediaImg, title, meta, metrics },
     refs: {
-      get block() { return block.current; },
-      get beamL() { return beamL.current; },
-      get beamR() { return beamR.current; },
-      get flash() { return flash.current; },
-      get media() { return media.current; },
-      get mediaImg() { return mediaImg.current; },
-      get title() { return title.current; },
-      get meta() { return meta.current; },
-      get metrics() { return metrics.current; },
+      get block() {
+        return block.current;
+      },
+      get beamL() {
+        return beamL.current;
+      },
+      get beamR() {
+        return beamR.current;
+      },
+      get flash() {
+        return flash.current;
+      },
+      get media() {
+        return media.current;
+      },
+      get mediaImg() {
+        return mediaImg.current;
+      },
+      get title() {
+        return title.current;
+      },
+      get meta() {
+        return meta.current;
+      },
+      get metrics() {
+        return metrics.current;
+      },
     },
   };
 }
 
-function CollisionBlock({ c, bind, eager }: { c: CollisionDef; bind: BlockBind; eager: boolean }) {
-  const { block, beamL, beamR, flash, media, mediaImg, title, meta, metrics } = bind;
+function CollisionBlock({
+  c,
+  bind,
+  eager,
+}: {
+  c: CollisionDef;
+  bind: BlockBind;
+  eager: boolean;
+}) {
+  const { block, beamL, beamR, flash, media, mediaImg, title, meta, metrics } =
+    bind;
   return (
     <article
       ref={block}
@@ -98,7 +125,11 @@ function CollisionBlock({ c, bind, eager }: { c: CollisionDef; bind: BlockBind; 
         }}
       />
 
-      <div ref={media} className="absolute inset-0 will-change-transform" data-cursor="media">
+      <div
+        ref={media}
+        className="absolute inset-0 will-change-transform"
+        data-cursor="media"
+      >
         {/* eslint-disable-next-line @next/next/no-img-element -- WebGL displacement texture source; sizes controlled */}
         <img
           ref={mediaImg}
@@ -129,7 +160,7 @@ function CollisionBlock({ c, bind, eager }: { c: CollisionDef; bind: BlockBind; 
         >
           <span className="block overflow-hidden">
             <span data-line className="block">
-              {c.client}
+              {c.product}
             </span>
           </span>
         </h3>
@@ -139,7 +170,10 @@ function CollisionBlock({ c, bind, eager }: { c: CollisionDef; bind: BlockBind; 
               <span className="type-display text-3xl text-whitehot lg:text-5xl">
                 <Odometer value={m.value} prefix={m.prefix} suffix={m.suffix} />
               </span>
-              <span className="type-mono text-dust" style={{ fontSize: "0.62rem" }}>
+              <span
+                className="type-mono text-dust"
+                style={{ fontSize: "0.62rem" }}
+              >
                 {m.label}
               </span>
             </div>
@@ -158,12 +192,18 @@ export default function Collisions() {
   const all = [b0, b1, b2];
 
   useSceneTrigger<CollisionsRefs>((args) => createCollisionsScene(args), {
-    get wrapper() { return wrapper.current; },
+    get wrapper() {
+      return wrapper.current;
+    },
     blocks: all.map((b) => b.refs),
   });
 
   return (
-    <section ref={wrapper} id="collisions" aria-label="Selected work — collisions">
+    <section
+      ref={wrapper}
+      id="collisions"
+      aria-label="Selected work — collisions"
+    >
       {COLLISIONS.map((c, i) => (
         <CollisionBlock key={c.id} c={c} bind={all[i].bind} eager={i === 0} />
       ))}
