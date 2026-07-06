@@ -12,7 +12,8 @@ import SectionHUD from "@/components/persistent/SectionHUD";
 import BackgroundAudio from "@/components/persistent/BackgroundAudio";
 import { SITE, FOUNDERS } from "@/constants/content";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://quarks-rosy.vercel.app";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://quarks-rosy.vercel.app";
 const TITLE = `${SITE.name} — ${SITE.tagline}`;
 
 const spaceGrotesk = Space_Grotesk({
@@ -80,7 +81,14 @@ export const metadata: Metadata = {
     title: TITLE,
     description: SITE.description,
     locale: "en_US",
-    images: [{ url: "/hero/genesis-poster.jpg", alt: TITLE, width: 1920, height: 1080 }],
+    images: [
+      {
+        url: "/hero/genesis-poster.jpg",
+        alt: TITLE,
+        width: 1920,
+        height: 1080,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -110,6 +118,14 @@ const jsonLd = {
   description: SITE.description,
   slogan: SITE.tagline,
   email: SITE.emailNew,
+
+  sameAs: [
+    "https://www.linkedin.com/company/quarksdigital",
+    "https://www.instagram.com/quarksdigital",
+    // "https://x.com/quarks",
+    // "https://github.com/quarks",
+    // "https://youtube.com/@quarks",
+  ],
   founder: FOUNDERS.map((f) => ({
     "@type": "Person",
     name: f.name.charAt(0) + f.name.slice(1).toLowerCase(),
