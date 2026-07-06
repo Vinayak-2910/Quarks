@@ -2,7 +2,7 @@
 
 export const SITE = {
   name: "QUARKS",
-  tagline: "From invisible to inevitable.",
+  tagline: "From Invisible to Inevitable.",
   subline: "A DIGITAL MARKETING AGENCY",
   description:
     "Quarks is a digital marketing agency that engineers attention at the fundamental level. We guarantee permanent impact.",
