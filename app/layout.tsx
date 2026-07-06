@@ -13,7 +13,7 @@ import BackgroundAudio from "@/components/persistent/BackgroundAudio";
 import { SITE, FOUNDERS } from "@/constants/content";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://quarks-rosy.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.quarksdigital.in";
 const TITLE = `${SITE.name} — ${SITE.tagline}`;
 
 const spaceGrotesk = Space_Grotesk({
