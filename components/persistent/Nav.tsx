@@ -63,19 +63,14 @@ export default function Nav() {
           getLenis()?.scrollTo(0, { duration: 2 });
         }}
       >
-        <span aria-hidden="true" className="relative inline-block h-4 w-4">
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              className="absolute h-[4px] w-[4px] rounded-full bg-cherenkov-500"
-              style={{
-                left: `${[6, 0, 12][i]}px`,
-                top: `${[0, 10, 10][i]}px`,
-                boxShadow: "0 0 6px rgba(56,219,255,0.9)",
-              }}
-            />
-          ))}
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo.png"
+          alt=""
+          aria-hidden="true"
+          className="h-6 w-6"
+          style={{ filter: "drop-shadow(0 0 6px rgba(56,219,255,0.55))" }}
+        />
         <span className="type-display text-sm tracking-tight text-starlight">{SITE.name}</span>
       </a>
 

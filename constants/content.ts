@@ -204,7 +204,7 @@ export const FOUNDERS: readonly FounderDef[] = [
       "Love for data-driven marketing and analytics.",
       '"The beauty of numbers lie in their ability to tell stories." ~Vinayak Mittal',
     ],
-    photoFull: "/founders/saksham.jpg",
+    photoFull: "/founders/vinayak.jpg",
   },
   {
     id: "founder-3",
@@ -226,7 +226,7 @@ export const FOUNDERS: readonly FounderDef[] = [
       "Love for data-driven marketing and analytics.",
       '"The beauty of numbers lie in their ability to tell stories." ~Vinayak Mittal',
     ],
-    photoFull: "/founders/saksham.jpg",
+    photoFull: "/founders/shuvam.jpg",
   },
 ] as const;
 
