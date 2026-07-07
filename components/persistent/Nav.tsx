@@ -50,14 +50,14 @@ export default function Nav() {
   return (
     <header
       ref={ref}
-      className="glass fixed left-1/2 top-5 flex -translate-x-1/2 items-center gap-6 rounded-full px-6 py-3"
+      className="glass fixed left-1/2 top-4 flex w-[calc(100vw-2rem)] -translate-x-1/2 items-center justify-between gap-4 rounded-full px-4 py-2 md:top-5 md:w-auto md:justify-start md:gap-6 md:px-6 md:py-3"
       style={{ zIndex: "var(--z-nav)" }}
     >
       <a
         href="#top"
         data-cursor="link"
         aria-label={`${SITE.name} — back to top`}
-        className="flex items-center gap-2 no-underline"
+        className="flex shrink-0 items-center gap-2 no-underline"
         onClick={(e) => {
           e.preventDefault();
           getLenis()?.scrollTo(0, { duration: 2 });
@@ -68,10 +68,10 @@ export default function Nav() {
           src="/logo.png"
           alt="logo"
           aria-hidden="true"
-          className="h-6 w-6"
+          className="h-5 w-5 md:h-6 md:w-6"
           style={{ filter: "drop-shadow(0 0 6px rgba(56,219,255,0.55))" }}
         />
-        <span className="type-display text-sm tracking-tight text-starlight">{SITE.name}</span>
+        <span className="type-display whitespace-nowrap text-xs tracking-tight text-starlight md:text-sm">{SITE.name}</span>
       </a>
 
       <nav className="hidden items-center gap-5 md:flex">
@@ -95,7 +95,7 @@ export default function Nav() {
         data-magnetic-pull="0.2"
         data-cursor="link"
         onClick={() => go("#contact")}
-        className="type-mono rounded-full border border-cherenkov-700 px-4 py-1.5 text-cherenkov-300"
+        className="type-mono shrink-0 whitespace-nowrap rounded-full border border-cherenkov-700 px-3 py-1 text-[11px] text-cherenkov-300 md:px-4 md:py-1.5 md:text-xs"
       >
         <span data-magnetic-inner className="inline-block">{NAV.cta}</span>
       </button>

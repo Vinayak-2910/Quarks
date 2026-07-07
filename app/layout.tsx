@@ -10,6 +10,7 @@ import ScaleReadout from "@/components/persistent/ScaleReadout";
 import ProgressFilament from "@/components/persistent/ProgressFilament";
 import SectionHUD from "@/components/persistent/SectionHUD";
 import BackgroundAudio from "@/components/persistent/BackgroundAudio";
+import SoundToggle from "@/components/persistent/SoundToggle";
 import { SITE, FOUNDERS } from "@/constants/content";
 
 const SITE_URL =
@@ -168,6 +169,7 @@ export default function RootLayout({
           <Cursor />
           <Preloader />
           <BackgroundAudio />
+          <SoundToggle />
         </SmoothScrollProvider>
       </body>
     </html>

@@ -87,17 +87,17 @@ export interface CollisionDef {
 
 export const COLLISIONS: readonly CollisionDef[] = [
   {
-    id: "helios",
+    id: "mosaram",
     index: "COLLISION 001",
-    product: "HELIOS",
-    client: "HELIOS",
-    sector: "Consumer EV",
-    year: "2025",
+    product: "MOSARAM",
+    client: "MOSARAM",
+    sector: "Automobile Industry",
+    year: "2026",
     image: "/media/cases/helios.webp",
     metrics: [
-      { value: 412, prefix: "+", suffix: "%", label: "Organic reach" },
-      { value: 2.4, suffix: "M", label: "Launch views" },
-      { value: 38, suffix: "%", label: "CAC reduction" },
+      { value: 60, prefix: "+", suffix: "%", label: "Organic reach" },
+      { value: 2.5, suffix: "K", label: "Launch views" },
+      { value: 31, suffix: "%", label: "CAC reduction" },
     ],
   },
   {
@@ -109,7 +109,7 @@ export const COLLISIONS: readonly CollisionDef[] = [
     year: "2025",
     image: "/media/cases/kute.webp",
     metrics: [
-      { value: 1, suffix: "M", label: "Installs / 90 days" },
+      { value: 1, suffix: "K", label: "Installs / 90 days" },
       { value: 4.8, suffix: "★", label: "Store rating" },
       { value: 70, prefix: "", suffix: "%", label: "Faster" },
     ],
@@ -260,9 +260,9 @@ export const ABOUT = {
   hudLabel: "S8 · THE OBSERVERS",
   eyebrow: "ABOUT US",
   introTitle:
-    "UI/UX Design, 3D Experiences & Full Stack Development. We do it all. We compile a plathera of skills into one coherent force.",
+    "UI/UX Design, 3D Experiences & Full Stack Development. We do it all. We compile a plathera of skills into one coherent force. From App development to Web Development and design, we engineer attention at the fundamental level. We guarantee permanent impact.",
   introBody:
-    "Quarks is a small, obsessive team of specialists - strategists, designers, engineers and storytellers. We organise and compile very different skills into one coherent force, so ideas that start invisible end up inevitable. Different particles, one field.",
+    "Quarks is a small, obsessive team of specialists - strategists, designers, engineers and entrepreneurs. We organise and compile very different skills into one coherent force, so ideas that start invisible end up inevitable. Different particles, one field.",
   triggerLabel: "ABOUT US",
   closeLabel: "CLOSE",
 } as const;
