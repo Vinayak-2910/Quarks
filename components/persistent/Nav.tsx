@@ -66,7 +66,7 @@ export default function Nav() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo.png"
-          alt=""
+          alt="logo"
           aria-hidden="true"
           className="h-6 w-6"
           style={{ filter: "drop-shadow(0 0 6px rgba(56,219,255,0.55))" }}
