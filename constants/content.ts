@@ -115,13 +115,13 @@ export const COLLISIONS: readonly CollisionDef[] = [
     ],
   },
   {
-    id: "atlas",
+    id: "kcpl",
     index: "COLLISION 003",
-    product: "ATLAS",
-    client: "ATLAS",
+    product: "KCPL",
+    client: "KCPL",
     sector: "Streetwear",
     year: "2026",
-    image: "/media/cases/atlas.webp",
+    image: "/media/cases/kcpl.webp",
     metrics: [
       { value: 18, suffix: "min", label: "Sellout time" },
       { value: 320, suffix: "K", label: "Waitlist" },
