@@ -359,12 +359,7 @@ export default function About() {
         className="relative h-screen w-full overflow-hidden bg-void"
       >
         {/* header */}
-        <div className="pointer-events-none absolute left-6 top-8 z-20 md:left-16 md:top-12">
-          <p className="type-mono text-cherenkov-300">{ABOUT.eyebrow}</p>
-          <p className="mt-2 max-w-xs text-sm text-[#ffffff]/60 md:max-w-sm">
-            {ABOUT.introTitle}
-          </p>
-        </div>
+        
         {n > 1 && (
           <div className="pointer-events-none absolute right-6 top-8 z-20 md:right-16 md:top-12">
             <p className="type-mono text-[#ffffff]/60">

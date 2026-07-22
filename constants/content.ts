@@ -132,6 +132,57 @@ export const COLLISIONS: readonly CollisionDef[] = [
 
 export const COLLISIONS_HUD = "S4 · COLLISIONS";
 
+export interface PrincipleDef {
+  id: string;
+  index: string;
+  name: string;
+  line: string;
+  tags: [string, string];
+  symbol: "innovation" | "results" | "transparency" | "growth";
+}
+
+export const ABOUT_US = {
+  hudLabel: "S5 · THE FIELD",
+  eyebrow: "ABOUT US",
+  headline: "Different particles,",
+  headlineAccent: "one field.",
+  body: "Quarks is a small, obsessive team of strategists, designers and engineers. We compress very different skills into a single coherent force - research, design, code and distribution moving as one - so ideas that start invisible end up inevitable.",
+  principles: [
+    {
+      id: "innovation",
+      index: "PRINCIPLE 01 / 04",
+      name: "INNOVATION",
+      line: "We build what doesn't exist yet - every engagement starts from first principles, never from a template.",
+      tags: ["First principles", "R&D"],
+      symbol: "innovation",
+    },
+    {
+      id: "results",
+      index: "PRINCIPLE 02 / 04",
+      name: "RESULTS",
+      line: "Craft is measured. Every experience we ship is tied to a number that has to move.",
+      tags: ["Measured", "Accountable"],
+      symbol: "results",
+    },
+    {
+      id: "transparency",
+      index: "PRINCIPLE 03 / 04",
+      name: "TRANSPARENCY",
+      line: "Open roadmaps, open numbers, open pricing. You see the work while it happens.",
+      tags: ["Open data", "No jargon"],
+      symbol: "transparency",
+    },
+    {
+      id: "growth",
+      index: "PRINCIPLE 04 / 04",
+      name: "GROWTH",
+      line: "We stay past launch, compounding what works until the momentum is permanent.",
+      tags: ["Compounding", "Long term"],
+      symbol: "growth",
+    },
+  ] as readonly PrincipleDef[],
+} as const;
+
 export const SCALE_STEPS = [
   {
     index: "01",
@@ -156,10 +207,10 @@ export const SCALE_STEPS = [
   },
 ] as const;
 
-export const SCALE_HUD = "S5 · THE SCALE";
+export const SCALE_HUD = "S6 · THE SCALE";
 
 export const PROOF = {
-  hudLabel: "S6 · PROOF",
+  hudLabel: "S7 · PROOF",
   stats: [
     { value: 10, suffix: "+", label: "PRODUCTS" },
     { value: 10000, suffix: "+", label: "LIVES IMPACTED" },
@@ -168,7 +219,7 @@ export const PROOF = {
 } as const;
 
 export const CONTACT = {
-  hudLabel: "S7 · GRAVITY WELL",
+  hudLabel: "S8 · GRAVITY WELL",
   headline: "Let's Connect.",
   cta: "LET'S CONNECT",
   rows: [
@@ -268,7 +319,7 @@ export const FOUNDERS: readonly FounderDef[] = [
 ] as const;
 
 export const ABOUT = {
-  hudLabel: "S8 · THE OBSERVERS",
+  hudLabel: "S9 · THE OBSERVERS",
   eyebrow: "ABOUT US",
   introTitle:
     "UI/UX Design, 3D Experiences & Full Stack Development. We do it all. We compile a plathera of skills into one coherent force. From App development to Web Development and design, we engineer attention at the fundamental level. We guarantee permanent impact.",

@@ -2,6 +2,7 @@ import Hero from "@/sections/Hero";
 import Manifesto from "@/sections/Manifesto";
 import Forces from "@/sections/Forces";
 import Collisions from "@/sections/Collisions";
+import AboutUs from "@/sections/AboutUs";
 import Scale from "@/sections/Scale";
 import Proof from "@/sections/Proof";
 import About from "@/sections/About";
@@ -14,6 +15,7 @@ export default function Home() {
       <Manifesto />
       <Forces />
       <Collisions />
+      <AboutUs />
       <Scale />
       <Proof />
       <About />
