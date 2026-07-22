@@ -95,9 +95,9 @@ export const COLLISIONS: readonly CollisionDef[] = [
     year: "2026",
     image: "/media/cases/helios.webp",
     metrics: [
-      { value: 60, prefix: "+", suffix: "%", label: "Organic reach" },
-      { value: 2.5, suffix: "K", label: "Launch views" },
-      { value: 31, suffix: "%", label: "CAC reduction" },
+      { value: 60, prefix: "+", suffix: "%", label: "Organic visits" },
+      { value: 1.5, suffix: "K", label: "Launch views" },
+      { value: 20, suffix: "%", label: "Increase in sales" },
     ],
   },
   {
@@ -110,8 +110,8 @@ export const COLLISIONS: readonly CollisionDef[] = [
     image: "/media/cases/kute.webp",
     metrics: [
       { value: 1, suffix: "K", label: "Installs / 90 days" },
-      { value: 4.8, suffix: "★", label: "Store rating" },
-      { value: 70, prefix: "", suffix: "%", label: "Faster" },
+      { value: 4.3, suffix: "★", label: "Store rating" },
+      { value: 70, prefix: "+", suffix: "%", label: "Faster" },
     ],
   },
   {
@@ -119,13 +119,13 @@ export const COLLISIONS: readonly CollisionDef[] = [
     index: "COLLISION 003",
     product: "KCPL",
     client: "KCPL",
-    sector: "Streetwear",
+    sector: "Workstation Distribution",
     year: "2026",
     image: "/media/cases/kcpl.webp",
     metrics: [
-      { value: 18, suffix: "min", label: "Sellout time" },
-      { value: 320, suffix: "K", label: "Waitlist" },
-      { value: 7, suffix: "", label: "Countries" },
+      { value: 25, prefix: "+", suffix: "%", label: "Orders Increase" },
+      { value: 500, suffix: "+", label: "Waitlist" },
+      { value: 3, suffix: "", label: "Cities" },
     ],
   },
 ] as const;
@@ -149,35 +149,35 @@ export const ABOUT_US = {
   body: "Quarks is a small, obsessive team of strategists, designers and engineers. We compress very different skills into a single coherent force - research, design, code and distribution moving as one - so ideas that start invisible end up inevitable.",
   principles: [
     {
-      id: "innovation",
+      id: "development",
       index: "PRINCIPLE 01 / 04",
-      name: "INNOVATION",
+      name: "DEVELOPMENT",
       line: "We build what doesn't exist yet - every engagement starts from first principles, never from a template.",
       tags: ["First principles", "R&D"],
       symbol: "innovation",
     },
     {
-      id: "results",
+      id: "seo",
       index: "PRINCIPLE 02 / 04",
-      name: "RESULTS",
+      name: "SEO & ASO",
       line: "Craft is measured. Every experience we ship is tied to a number that has to move.",
       tags: ["Measured", "Accountable"],
       symbol: "results",
     },
     {
-      id: "transparency",
+      id: "design",
       index: "PRINCIPLE 03 / 04",
-      name: "TRANSPARENCY",
-      line: "Open roadmaps, open numbers, open pricing. You see the work while it happens.",
-      tags: ["Open data", "No jargon"],
+      name: "DESIGN",
+      line: "Every interface is crafted to turn attention into action—combining aesthetics, usability, and conversion-focused design.",
+      tags: ["User-first", "Conversion"],
       symbol: "transparency",
     },
     {
-      id: "growth",
+      id: "marketing",
       index: "PRINCIPLE 04 / 04",
-      name: "GROWTH",
-      line: "We stay past launch, compounding what works until the momentum is permanent.",
-      tags: ["Compounding", "Long term"],
+      name: "MARKETING",
+      line: "From content to paid campaigns, we build marketing systems that attract, convert, and retain the right audience.",
+      tags: ["Performance", "Growth"],
       symbol: "growth",
     },
   ] as readonly PrincipleDef[],
@@ -212,9 +212,9 @@ export const SCALE_HUD = "S6 · THE SCALE";
 export const PROOF = {
   hudLabel: "S7 · PROOF",
   stats: [
-    { value: 10, suffix: "+", label: "PRODUCTS" },
-    { value: 10000, suffix: "+", label: "LIVES IMPACTED" },
-    { value: 9, suffix: "", label: "COUNTRIES" },
+    { value: 15, suffix: "+", label: "PRODUCTS" },
+    { value: 100000, suffix: "+", label: "LIVES IMPACTED" },
+    { value: 10, suffix: "+", label: "COLLABORATIONS" },
   ],
 } as const;
 

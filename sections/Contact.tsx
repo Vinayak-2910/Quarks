@@ -76,7 +76,9 @@ export default function Contact() {
             <p key={r.label} className="type-mono text-dust">
               {r.label} -{" "}
               <a
-                href={`mailto:${r.value}`}
+                href={`https://mail.google.com/mail/u/0/?view=cm&fs=1&to=${encodeURIComponent(r.value)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 data-cursor="link"
                 className="text-cherenkov-300 no-underline hover:text-whitehot"
               >

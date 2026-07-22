@@ -8,7 +8,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { CURSOR } from "@/constants/motion";
-import { isTouchDevice, prefersReducedMotion } from "@/utils/dom";
+import { prefersReducedMotion } from "@/utils/dom";
 import type { CursorVariant } from "@/types";
 
 export default function Cursor() {
@@ -18,7 +18,12 @@ export default function Cursor() {
   const triadRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (isTouchDevice() || prefersReducedMotion() || window.innerWidth < 1024)
+    // Use pointer capability media query instead of isTouchDevice().
+    // Laptops with touchscreens still have hover + fine pointer (mouse/trackpad),
+    // so isTouchDevice() would incorrectly disable the custom cursor on them.
+    const hasFinePointer =
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (!hasFinePointer || prefersReducedMotion() || window.innerWidth < 1024)
       return;
     const dot = dotRef.current;
     const ring = ringRef.current;
